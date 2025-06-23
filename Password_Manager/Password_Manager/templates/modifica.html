@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{# Titolo della pagina visualizzato nel browser #}
+{% block title %}Modifica Password - Password Manager{% endblock %}
+
+{# Contenuto principale della pagina #}
+{% block content %}
+<div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5">
+
+    <div class="flex flex-wrap justify-center gap-3 p-4">
+        <p class="text-[#0d141c] tracking-tight text-[32px] font-bold leading-tight w-full text-center">Modifica Password</p>
+    </div>
+
+    <form method="POST" class="space-y-3" novalidate>
+        
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Nome del sito</p>
+                <input
+                    type="text"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="nome_sito"
+                    name="nome_sito"
+                    value="{{ password_entry.nome_sito }}"
+                    required
+                />
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Username/Email</p>
+                <input
+                    type="text"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="username_sito"
+                    name="username_sito"
+                    value="{{ password_entry.username_sito }}"
+                    required
+                />
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Password</p>
+                <input
+                    type="password"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="password_sito"
+                    name="password_sito"
+                    value="{{ password_entry.password_sito }}"
+                    required
+                />
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-center gap-4 px-4 py-3">
+            <button
+                type="submit"
+                class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Aggiorna Password</span>
+            </button>
+            <a
+                href="{{ url_for('main.dashboard') }}"
+                class="flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Annulla</span>
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

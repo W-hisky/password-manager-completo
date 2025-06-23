@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{# Titolo della pagina visualizzato nel browser #}
+{% block title %}Registrazione - Password Manager{% endblock %}
+
+{# Contenuto principale della pagina #}
+{% block content %}
+<div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5">
+
+    <div class="flex flex-wrap justify-center gap-3 p-4">
+        <p class="text-[#0d141c] tracking-tight text-[32px] font-bold leading-tight w-full text-center">Registrazione</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('main.registrazione') }}" class="space-y-3" novalidate>
+        
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Nome utente</p>
+                <input
+                    type="text"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="username"
+                    name="username"
+                    required
+                />
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Password</p>
+                <input
+                    type="password"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="password"
+                    name="password"
+                    required
+                    minlength="8"
+                />
+                <p class="text-[#49709c] text-sm font-normal leading-normal pt-1">La password deve essere di almeno 8 caratteri (consigliati 12+)</p>
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d141c] text-base font-medium leading-normal pb-2">Conferma password</p>
+                <input
+                    type="password"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] focus:border-none h-14 placeholder:text-[#49709c] p-4 text-base font-normal leading-normal"
+                    id="conferma_password"
+                    name="conferma_password"
+                    required
+                />
+            </label>
+        </div>
+
+        <div class="flex max-w-[480px] flex-wrap items-center gap-4 px-4 py-3">
+            <button
+                type="submit"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em] flex-1"
+            >
+                <span class="truncate">Registrati</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{# Titolo della pagina visualizzato nel browser #}
+{% block title %}Errore del Server - Password Manager{% endblock %}
+
+{# Contenuto principale della pagina #}
+{% block content %}
+<div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 text-center">
+
+    <div class="flex flex-wrap justify-center gap-3 p-4">
+        <p class="text-[#e74c3c] tracking-tight text-[32px] font-bold leading-tight w-full">
+            Oops! Si è verificato un errore.
+        </p>
+    </div>
+
+    <div class="px-4 py-3">
+        <p class="text-[#0d141c] text-base font-normal leading-normal pb-2">
+            Siamo spiacenti, ma si è verificato un errore interno del server.
+        </p>
+        <p class="text-[#49709c] text-sm font-normal leading-normal pt-1">
+            Il nostro team tecnico è stato notificato. Per favore, prova a tornare alla pagina principale.
+        </p>
+    </div>
+
+    <div class="flex max-w-[480px] flex-wrap items-center justify-center gap-4 px-4 py-3">
+        <a
+            href="{{ url_for('main.dashboard') }}"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em] flex-1"
+        >
+            <span class="truncate">Torna alla Dashboard</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
